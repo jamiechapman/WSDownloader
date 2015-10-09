@@ -5,6 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void (^WSDownloaderJSONCompletionBlock)(id JSON, NSError *error);
 typedef void (^WSDownloaderDataCompletionBlock)(NSData *binaryData, NSError *error);
