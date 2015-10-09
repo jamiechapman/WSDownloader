@@ -12,7 +12,8 @@
 + (void)downloadJSONFromURL:(NSURL *)url parameters:(NSDictionary *)parameters completion:(WSDownloaderJSONCompletionBlock)completionBlock
 {
 	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-	[manager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+	[manager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+	manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
 	[manager GET:[url absoluteString]
 	  parameters:parameters
 		 success:^(AFHTTPRequestOperation *operation, id responseObject) {
